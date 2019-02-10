@@ -59,17 +59,25 @@
 
 <script>
   let keypress;
-  let el;
+  let audioEl;
 
   window.addEventListener("keydown", (e) => {
     keypress = e.keyCode; 
-
+    audioEl = document.querySelector("audio[data-key='" + keypress + "']");
+    if (audioEl === null) {
+      return;
+    }
+  
     document.querySelector("div[data-key='" + keypress + "']").classList.toggle("playing");
 
     document.querySelector("audio[data-key='" + keypress + "']").play();
+
   });
 
   window.addEventListener("keyup", (e) => {
+    if (audioEl === null) {
+      return;
+    }
     document.querySelector("div[data-key='" + e.keyCode + "']").classList.toggle("playing");
   });
 
