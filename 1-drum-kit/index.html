@@ -63,19 +63,14 @@
 
   window.addEventListener("keydown", (e) => {
     keypress = e.keyCode; 
-    console.log(keypress);
-    console.log(e);
-    console.log("rachel", e.keyCode);
 
     document.querySelector("div[data-key='" + keypress + "']").classList.toggle("playing");
-    console.log(el);
 
     document.querySelector("audio[data-key='" + keypress + "']").play();
   });
 
   window.addEventListener("keyup", (e) => {
     document.querySelector("div[data-key='" + e.keyCode + "']").classList.toggle("playing");
-
   });
 
 </script>
