@@ -70,16 +70,27 @@
   
     document.querySelector("div[data-key='" + keypress + "']").classList.toggle("playing");
 
-    document.querySelector("audio[data-key='" + keypress + "']").play();
+    // document.querySelector("audio[data-key='" + keypress + "']").play();
+    audioEl.currentTime = 0;
+    audioEl.play();
 
   });
 
-  window.addEventListener("keyup", (e) => {
-    if (audioEl === null) {
-      return;
-    }
-    document.querySelector("div[data-key='" + e.keyCode + "']").classList.toggle("playing");
-  });
+  // window.addEventListener("keyup", (e) => {
+  //   if (audioEl === null) {
+  //     return;
+  //   }
+  //   document.querySelector("div[data-key='" + e.keyCode + "']").classList.toggle("playing");
+  // });
+
+  function removeTransition(e) {
+    if (e.propertyName != "transform") return;
+
+    this.classList.remove("playing");
+  };
+
+  const keys = document.querySelectorAll(".key");
+  keys.forEach(key => key.addEventListener("transitionend", removeTransition));
 
 </script>
   
