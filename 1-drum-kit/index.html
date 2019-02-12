@@ -63,7 +63,8 @@
 
   window.addEventListener("keydown", (e) => {
     keypress = e.keyCode; 
-    audioEl = document.querySelector("audio[data-key='" + keypress + "']");
+    // audioEl = document.querySelector("audio[data-key='" + keypress + "']");
+    audioEl = document.querySelector(`audio[data-key="${keypress}"]`); //es6 formatting
     if (audioEl === null) {
       return;
     }
