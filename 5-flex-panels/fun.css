@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.panel-left {
+    background-image: url(june.jpg);
+}
+.panel-center {
+    background-image: url(juneandchester.jpg);
+}
+
+.panel-right {
+    background-image: url(shaggy.jpg);
+}
+
+.panel {
+    width: 20%;
+    text-align: center;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+
+    transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+    
+    font-size: 20px;
+
+
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.panels {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+p {
+    margin: 0;
+    /* width: 100%; */
+    justify-content: center;
+    align-items: center; 
+    flex: 1 0 auto;
+}
+
+.panel p {
+    text-transform: uppercase;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 2em;
+  }
+
+  .panel > *:first-child {
+    transform: translateY(-100%);
+  }
+  .panel.open-active > *:first-child {
+    transform: translateY(0);
+  }
+  .panel > *:last-child {
+    transform: translateY(100%);
+  }
+  .panel.panel.open-active > *:last-child {
+    transform: translateY(0);
+  }
+
+  .panel.open {
+    font-size: 40px;
+    flex: 5;
+  }
