@@ -27,3 +27,6 @@ Array cardio was all about getting more experience with map, reduce, filter and 
 
 ### Day 5 - Array Cardio - February 20
 This was so much fun. This lesson was using flex with some transforms to make some really cool flex panels that opened when you clicked them. I enjoyed it so much that I created another version using picktures of my dogs. My version can be run by cloning or downloading the project and then opening fun.html in your browser.  I had used flex before, you can see it on my website [here](http://www.rlfuller.com), but this was the first time that I had used flex to create columns versus rows. 
+
+### Day 5 - Type Ahead - February 21
+Today was about taking connectng to an api to grab some data and displaying it on a website. Once I understood what we were going to do, I created a function to grab the data using a `new XMLHttpRequest()`, which worked. But once I watched the solution, I saw that we actually used `fetch()` which was definitely a better way to go, as my xhr function was around 12 lines of code while the fetch was just 3 lines. This was a good introduction to fetch and promises. 
