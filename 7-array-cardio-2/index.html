@@ -85,8 +85,8 @@
 
     //or we could do this, create a new array
     const newComments = [
-      comments.slice(0, index),
-      comments.slice(index + 1)
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
     ];
 
     const newComments2 = comments.slice(0, index).concat(comments.slice(index+1));
