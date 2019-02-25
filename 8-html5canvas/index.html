@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+  const canvas = document.querySelector("#draw");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth; //size the canvas to be the width and height of the window
+  canvas.height = window.innerHeight;
+
+  ctx.strokeStyle = "#BADA55";
+  ctx.lineJoin = "round";
+  ctx.lineCap = "round";
+  ctx.lineWidth = 50;
+
+  // ctx.globalCompositeOperation = "multiply";
+
+  let hue = 0;
+  let direction = true;
+
+  let isDrawing = false; //set to true when we click down, draw when we press the mouse
+  let lastX = 0;
+  let lastY = 0;
+
+  function draw(e){
+    if (!isDrawing) return;
+    console.log(e);
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+    ctx.beginPath();
+    
+    //start the line on lastX, lastY
+    ctx.moveTo(lastX, lastY);
+
+    //end the line at the event offsetX and offsetY
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke(); //nothing gets drawn to the canvas until you call stroke
+
+    lastX = e.offsetX;
+    lastY = e.offsetY;
+
+    hue++;
+    if (hue >= 360){
+      hue = 0;
+    }
+
+    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+      direction = !direction;
+    }
+    if (direction){
+      ctx.lineWidth++;
+    } else {
+      ctx.lineWidth--;
+    }
+
+    //es6 set variables in one line
+    //[lastX, lastY] = [e.offsetX, e.offsetY];
+  }
+
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mousedown", (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY]; //do this so we dont always start at 0,0, start from where the user 
+    //mouses down
+
+  });
+  canvas.addEventListener("mouseup", () => isDrawing = false);
+  canvas.addEventListener("mouseout", () => isDrawing = false);
+
+</script>
+
+
+<style>
+  html, body {
+    margin: 0;
+  }
+</style>
+
+</body>
+</html>
