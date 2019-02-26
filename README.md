@@ -28,11 +28,14 @@ Array cardio was all about getting more experience with map, reduce, filter and 
 ### Day 5 - Array Cardio - February 20
 This was so much fun. This lesson was using flex with some transforms to make some really cool flex panels that opened when you clicked them. I enjoyed it so much that I created another version using picktures of my dogs. My version can be run by cloning or downloading the project and then opening fun.html in your browser.  I had used flex before, you can see it on my website [here](http://www.rlfuller.com), but this was the first time that I had used flex to create columns versus rows. 
 
-### Day 5 - Type Ahead - February 21
+### Day 6 - Type Ahead - February 21
 Today was about taking connectng to an api to grab some data and displaying it on a website. Once I understood what we were going to do, I created a function to grab the data using a `new XMLHttpRequest()`, which worked. But once I watched the solution, I saw that we actually used `fetch()` which was definitely a better way to go, as my xhr function was around 12 lines of code while the fetch was just 3 lines. This was a good introduction to fetch and promises. 
 
-### Day 6 - Array Cardio 2 - February 22
+### Day 7 - Array Cardio 2 - February 22
 Revisiting array functions, this time with `arr.some()`, `arr.every()`, and `arr.find()`. However, the coolest thing that I learned that I didn't know was this ... next time you need to print an array to the console to verify the data while debugging something, instead of `console.log(arr)`, use `console.table(arr)`.
 
-### Day 7 - Fun with Canvas - February 24
+### Day 8 - Fun with Canvas - February 24
 I could play with this lesson for hours. It was a brief introduction to canvas, but I think the most relevant thing was understanding mouse events. We worked with the `event` object and used `mouseup`, `mousedown`, `mouseout` and `mousemove` to draw lines on a canvas when you drag the mouse. 
+
+### Day 9 - Dev tools - February 26
+Some different methods for the console to make life a little easier. 
