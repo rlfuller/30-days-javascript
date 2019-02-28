@@ -123,6 +123,12 @@
         finish = index; 
         console.log("rachel", start, finish);
 
+        if (finish < start){
+          let temp = start;
+          start = finish;
+          finish = temp;
+        }
+        console.log("reverse", start, finish);
         for (i = start; i <= finish; i++){
           inputs[i].checked = true;
         }
@@ -132,6 +138,33 @@
 
   });
 
+  /// wes bos's solution
+  /*
+  const checkboxes = document.querySelectorAll(".inbox input[type='checkbox']");
+
+  let lastChecked;
+
+  function handleCheck(e) {
+
+    let inBetween = false;
+    //check if shiftkey is down an dcheck that they are checking it
+      if(e.shiftKey && this.checked){
+        //loop through all checkboxes to find the first checkbox that is checked and the last one checked
+        checkboxes.forEach(checkbox => {
+          if (checkbox === this || checkbox === lastChecked){
+            inBetween = !inBetween;
+          }
+
+          if (inBetween){
+            checkbox.checked = true;
+          }
+        });
+      }
+      lastChecked = this; //give a reference to the input that was checked
+  }
+
+  checkboxes.forEach(checkbox => checkbox.addEventListener("click", handleCheck));
+  */
   
 </script>
 </body>

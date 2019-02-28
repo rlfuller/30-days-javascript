@@ -39,3 +39,8 @@ I could play with this lesson for hours. It was a brief introduction to canvas, 
 
 ### Day 9 - Dev tools - February 26
 Some different methods for the console to make life a little easier. 
+
+### Day 10 - Holding Shift key to select multiple items - February 28
+For this exercise, we were given a list of checkboxes and then asked to come up with a solution where if the user clicked and held down the shift key, then clicked again, all the checkboxes inbetween would be checked. I came up with a solution before watching the official answer and of course, my solution was a lot longer. My solution was to use two event listeners, one for `mousedown` and one for `mouseup` and check to see if the shift key was pressed. Then get the index of each element that was clicked. On the `nouseup`, then loop through array of checkboxes only for those indicies and check all items. 
+
+What I learned from watching Wes Bos\` solution is that you don't need two event listeners for the shift key, as the event has a built in boolean property `event.shiftKey` which indicates if the shift key was pressed or not while clicking. 
