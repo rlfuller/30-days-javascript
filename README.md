@@ -47,3 +47,6 @@ What I learned from watching Wes Bos\` solution is that you don't need two event
 
 ### Day 11 - Styling a video player - February 28
 This lesson invovled using JS to style the controls of a video player. It was a nice introduction to some of the properites and methods of the video object, such as `video.play()`, `video.duration`, `video.currentTime`, `video.volume`, `video.playbackRate`. The most helpful one to know is `video.paused` because there is not a method to stop play, there is only a method to start the video playing, `video.play()`, so if you want to stop it, you can set `video.paused = true`. 
+
+### Day 12 - Key Sequence Detection - March 4
+I learned an easy method for detecting a sequence of keys, which is to store them in an array and then check for the sequence. But the most interesting things I learned were about the `konami` code `up`, `up`, `down`, `down`, `left`, `right`, `left`, `right`, `b`, `a`.  I did some research to see what websites are still using it. Try it on  [buzzfeed](buzzfeed.com), [digg.com](digg.com) or [British Vogue](https://www.vogue.co.uk). 
