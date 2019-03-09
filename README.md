@@ -55,3 +55,18 @@ I learned an easy method for detecting a sequence of keys, which is to store the
 This lesson shows how to give the effect of flying images in from off the page when you scroll up and down. You start with images being hidden and translated slightly off screen. As you scroll down a page to where the image image is, a class is appled with sets the `opacity: 1` and `transform: translateX(0%) scale(1);`. I"m personally not sure if this is a great effect because the end result is that as you are viewing the website and scrolling down, you see blank squares where the images should be. It's only as you scroll the page to the point where 1/2 of the image would be visible based on some math that looks at the image `offsetTop` property relative to the the current position in the scroll that the class is applied.  
 
 The most important thing I took for this lesson though is an understanding of debouncing and when you would use it. We used a debounce function found online that would help eliminate crazy lag effects from scroll as our windown event was listening to scroll and would run approximately 50 times with one flick of scroll down versus 7 after wrapping it in a debounce function. 
+
+### Day 14 - Copy By Reference vs Value - March 9
+This is something that I have learned in C#, but the most helpful thing I learned was all the ways to copy arrays and objects instead of just assigning a reference. 
+
+For arrays:
+- `arr2 = arr.slice()`
+- `arr3 = [].concat(arr)`
+- `arr4 = [...arr]`
+- `arr5 = Array.from(arr)`
+
+For objects:
+- `newObject2 = Object.assign({}, oldObject, {properties})`
+- `newObject3 = {...oldObject}`
+
+However, for objects, these only create a shallow copy, 1 level deep. If any of the properties are also objects, those will be copied by reference to the new object.
