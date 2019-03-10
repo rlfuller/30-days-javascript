@@ -70,3 +70,6 @@ For objects:
 - `newObject3 = {...oldObject}`
 
 However, for objects, these only create a shallow copy, 1 level deep. If any of the properties are also objects, those will be copied by reference to the new object.
+
+### Day 15 - localStorage and Event Delegation - March 10
+Today is daylight savings time .... spring forward. Today is also the day I learned about localStorage and Event Delegation. This exercise added elements to a list when entered through a form, then the list was persisted in local storage. The given solution was to re-populate the entire list each time an element was entered. I kept thinking that instead, we should do a solution to just add each individual item to the array as each element was entered. I think though if we did that, we wouldn't need to put the event listener on the ul and use event delegation, when we could have the event listener on each ul item as it's added to the array after form submit. 
