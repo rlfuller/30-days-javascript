@@ -76,3 +76,26 @@ Today is daylight savings time .... spring forward. Today is also the day I lear
 
 ### Day 16 - Making shadows move with the cursor - March 14
 We created a cool effect of moving a shadow around an element as the mouse moves. The biggest learning area is understanding some event properties. When you are dealing with events, you can use `offsetX` and `offsetY` to get the position of where the cursor is. 
+
+### Day 17 - Sorting an array of strings, but ignoring leading articles - March 16
+This lesson was about sorting an array of strings that had leading articles such as The, An, A and using regex to ignore the leading articles during the elements of the array. I definitely need to study more about regex, but the most interesting thing was about the evolution of functions. 
+
+From starting with a sort function like this:
+``` const sortedBands = bands.sort(function(a, b) {
+    if(strip(a) > strip(b)) {
+        return 1;
+    } else {
+    return -1;
+    }
+    });
+```
+
+To rewriting it to use ternary and es6 fat arrow:
+```
+const sortedBands = bands.sort((a, b) => {
+    return strip(a) > strip(b) ? 1 : -1;
+});
+```
+
+To understanding that if the only thing your function does is return, then you can use the implicit return, so removing the { } brackets and the `return` keyword:
+`const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);`
