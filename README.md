@@ -101,3 +101,6 @@ To rewriting it to use ternary and es6 fat arrow:
 To understanding that if the only thing your function does is return, then you can use the implicit return, so removing the { } brackets and the `return` keyword:
 
 `   const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);`
+
+### Day 18 - Using reduce to tally string times into hours, minutes, seconds - March 16
+I think the hardest part of this is understanding time logic / time math. You are basically taking an array of strings where each string is a string representation of minutes and seconds such as `"4:31"` and then adding all of those minutes and seconds together to get the total number of hours, minutes, and seconds.  This invovled a series of chained `.map` and `.reduce` calls. 
