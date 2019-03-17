@@ -104,3 +104,6 @@ To understanding that if the only thing your function does is return, then you c
 
 ### Day 18 - Using reduce to tally string times into hours, minutes, seconds - March 16
 I think the hardest part of this is understanding time logic / time math. You are basically taking an array of strings where each string is a string representation of minutes and seconds such as `"4:31"` and then adding all of those minutes and seconds together to get the total number of hours, minutes, and seconds.  This invovled a series of chained `.map` and `.reduce` calls. 
+
+### Day 19 - Fun with Webcam - March 17
+I'm definitely going to have to do more research and go over this again. The concept was excellent; take the Media Stream from your webcam and through it in a canvas, then from that canvas, capture the pixels to take photos from your webcam, sort of like a photo booth. Then apply fun filter effects. Who knew that apply filter effects is simply just manipulating the r, g, b pixels of an image?  
