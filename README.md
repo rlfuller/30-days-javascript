@@ -107,3 +107,6 @@ I think the hardest part of this is understanding time logic / time math. You ar
 
 ### Day 19 - Fun with Webcam - March 17
 I'm definitely going to have to do more research and go over this again. The concept was excellent; take the Media Stream from your webcam and through it in a canvas, then from that canvas, capture the pixels to take photos from your webcam, sort of like a photo booth. Then apply fun filter effects. Who knew that apply filter effects is simply just manipulating the r, g, b pixels of an image?  
+
+### Day 20 - Speech Recognition - March 19
+Did you know that JavaScript has speech recognition built into the browser? No apis or external libraries? I didn't either. To use this, you need to create a new speech recognitiion object: `const recognition = new SpeechRecognition`. Support is limited to Chrome. 
