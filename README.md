@@ -110,3 +110,9 @@ I'm definitely going to have to do more research and go over this again. The con
 
 ### Day 20 - Speech Recognition - March 19
 Did you know that JavaScript has speech recognition built into the browser? No apis or external libraries? I didn't either. To use this, you need to create a new speech recognitiion object: `const recognition = new SpeechRecognition`. Support is limited to Chrome. 
+
+### 10 lessons left !!!
+I"m on vacation next week from my job ... **Yay**, so I should be able to finish this series then. It's been a pretty awesome course and I would definitely recommend everyone who is interested in javascript to take it. 
+
+### Day 21 - Geolocation - March 23
+So Geolocation is getting your current location (latitude and longitude). But what the api also has is a heading and speed properties. The heading will tell you how many degrees from north you are. Unfortunately, to really test the heading and speed, you need to have some sort of simulator that can simulate walking. For all of you lucky mac owners out there, I believe that there is a geolocation simulator called xcode that you can use on safari to simulate walking or bicycling. For those of us that are not mac owners, we can launch the code on a server and access it via mobile to test it out.
