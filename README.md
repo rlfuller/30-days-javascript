@@ -116,3 +116,8 @@ I"m on vacation next week from my job ... **Yay**, so I should be able to finish
 
 ### Day 21 - Geolocation - March 23
 So Geolocation is getting your current location (latitude and longitude). But what the api also has is a heading and speed properties. The heading will tell you how many degrees from north you are. Unfortunately, to really test the heading and speed, you need to have some sort of simulator that can simulate walking. For all of you lucky mac owners out there, I believe that there is a geolocation simulator called xcode that you can use on safari to simulate walking or bicycling. For those of us that are not mac owners, we can launch the code on a server and access it via mobile to test it out.
+
+### Day 22 - Follow Along links with Highlighting - March 24
+This was a cool effect to add highlighting to links that follow your mouse as you move your mouse from one link to another. To do this, you need to know where the link is on the page to add the styles to it. I learned that to get the coordinates and dimensions of the element (width, height, left, right, top, bottom), there is an method you can use that has all of those items, `elem.getBoundingClientRect()`.  
+
+The other thing I learned is that when you are dealing wiht an element on the page and need to access it's position, you have to take into effect any scroll that has occurred. So you would need to add the `window.ScrollY` and `window.ScrollX` to the elements `top` and `left` coordinates, respectively. 
