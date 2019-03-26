@@ -43,7 +43,7 @@
     console.log(voices);
     const voiceOptions = voices
       // .filter(voice => voice.lang.includes("en"))
-      .map(voice => `<option voice="${voice.name}">${voice.name} (${voice.lang})</option>`)
+      .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
       .join("");
       voicesDropdown.innerHTML = voiceOptions;
   }
@@ -53,8 +53,8 @@
     console.log("Changing Voice");
     
     //loop over the voices array and find the voice who's name property matches the one selected from the dropdown
-    // msg.voice = voices.find(voice => voice.name  === this.value);
-    msg.voice = voices.find(voice => `${voice.name} (${voice.lang})` === this.value );
+    msg.voice = voices.find(voice => voice.name  === this.value);
+    //msg.voice = voices.find(voice => `${voice.name} (${voice.lang})` === this.value );
   }
 
   function toggle(startOver = true){
