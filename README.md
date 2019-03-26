@@ -125,4 +125,16 @@ The other thing I learned is that when you are dealing wiht an element on the pa
 ### Day 23 - Speech Recognition - March 25
 Today was about using the `SpeechSynthesis` interface of the Web Speech API [https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) to have the browser speak words that are entered in a form. I know that Wes Bos is using Chrome on a mac and he noted that several voices are loaded by default in the browser. I"m using Chromium on arch (antergos) and with Chromium no voices are loaded. I did install the `espeak` and `speech-dispatcher` packages for arch, but that didn't seem to work. `espeak` is the package you want that should load the voices. 
 
-Basically, as far as I understand, and please remember I"m a beginner, so take with a grain of salt, you need to create a message / some text, that will be spoken. This message is a SpeechSynthesisUtterance object. `const msg = new SpeechSynthesisUtterance()`. The utterance has a property called  `voice`, which is something like Alex who sppeaks English or Luciane who speaks French. These voices apparently come loaded with the browser on mac and possibly windows for Chrome, but not on Arch for Chromium so they have to be installed. You then call .speak() on a speechsythesis object and pass the utterance as the argument. If all goes well, you will hear some text: `window.speechSynthesis.speak(msg);`.  So I"m still doing some research about how to get this working on Chromium. If I figure out something, I will update this readme. 
+Basically, as far as I understand, and please remember I"m a beginner, so take with a grain of salt, you need to create a message / some text, that will be spoken. This message is a SpeechSynthesisUtterance object. `const msg = new SpeechSynthesisUtterance()`. The utterance has a property called  `voice`, which is something like Alex who sppeaks English or Luciane who speaks French. These voices apparently come loaded with the browser on mac and possibly windows for Chrome, but not on Arch with Chromium so they have to be installed. You then call .speak() on a speechsythesis object and pass the utterance as the argument. If all goes well, you will hear some text: `window.speechSynthesis.speak(msg);`.  So I"m still doing some research about how to get this working on Chromium. If I figure out something, I will update this readme. 
+
+#### Day 23 - Speech Recognition - Update - March 26
+So I installed Chrome and tried my solution on Chrome and that seemed to work. However the languages (or voices) displayed are definitely comming from espeak package versus being installed with Chrome. Additionally, the solution given by Wes Bos for setting the voice to the value in the dropdown didn't work for me and I"m not sure if it's because we aren't using the same languages.  Our solution was to find the voice in the voices array where the name property equaled the value of the string in the dropdown. However, when we set the dropdown value, we had appended the `lang` property to the `name` property, so when we tried to find the right value, I was getting undefined.  
+
+Basically, I needed to change this:
+```
+    msg.voice = voices.find(voice => voice.name  === this.value);
+````
+to this:
+```
+    msg.voice = voices.find(voice => `${voice.name} (${voice.lang})` === this.value );
+```
