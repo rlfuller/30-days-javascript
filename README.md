@@ -140,3 +140,11 @@ For `{once: true}`, I think that might be useful on an application like a shoppi
 
 ### Day 26 - Stripe.com Follow Along Nav - February 27
 Today was about mimicing the cool follow-along effect of the navigation that [stripe.com](https:stripe.com) has done on their website. The precursor to this lesson as Day 22 where we used the same `elem.getBoundingClientRect()`. Basically, we have a 'background' element which comprises the white background of the nav dropdown. When we hover over the top nav link, the dropdown will appear, but then we have to take the background element and make sure it has the same dimensions (top, left, height, width) as the dropdown. 
+
+### Day 27 - Drag and Scroll - February 28
+Today was about dragging the mouse and having the page scroll the appropriate pixels left or right. In this lesson, we used `pageX` as well as `offsetLeft`.  In previous lessons, we've used `clientX\Y`. The difference is: 
+
+* `pageX\Y` are relative to the top left corner of the whole rendered page (including parts hidden by scrolling).
+* `clientX\Y` are relative to the top left corner of the visible part of the page, "seen" through the browser window. So basically the viewport.
+
+When we were making this, i was thinking that it seems unnecessary as you can scroll the mouse and get the same effect, but I can see how this would be the same code you might use for a drag and drop. 
