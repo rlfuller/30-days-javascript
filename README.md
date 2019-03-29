@@ -130,21 +130,26 @@ Basically, as far as I understand, and please remember I"m a beginner, so take w
 #### Day 23 - Speech Recognition - Update - March 26
 So I installed Chrome (not to be confused with Chromium, although it is confusing since they are basically the same) and tried my solution on Chrome and that seemed to work. (If you are on Arch, you can get Chrome from the AUR, [https://aur.archlinux.org/](https://aur.archlinux.org/)).  It could be though, that this might work on Chromium: one thing that was recommended to try which I did not, was to launch chromium with flag `--enable-speech-dispatcher` turned on. I tried this but it didn't work. However, while I"m working, I usually have at least 20 *(yikes)* tabs open. I think when you want to launch chromium with a flag turned on, you need to close all the other instances first. 
 
-### Day 24 - Sticky Nav - February 26
+### Day 24 - Sticky Nav - March 26
 My biggest takeaway from this is understanding that fixed elements don't take up any space in the document. So once we fixed the nav in place, there was a little bit of a 'janky' reflow effect where the next element took up that space that had been occupied by the nav. To counteract this, we needed to add padding in the amount of pixels that had been taken up by the nav to the body of the document. 
 
-### Day 25 - Event Capture, Bubbling, Event Propagation, and Once - February 27
+### Day 25 - Event Capture, Bubbling, Event Propagation, and Once - March 27
 I think what's important about this is understanding when it might be good to use capture and when it might be good to use once. I can see that using `{capture: true}` might be really helpful if you have a bunch of nested elements and are listening for events on more than one of them. `capture` basically tells the dom to trigger the event on the capture stage instead of the bubbling stage (on the way down the dom tree versus on the way up).  
 
 For `{once: true}`, I think that might be useful on an application like a shopping cart, for example, where you only want an event to occur once. Specifically, you might only want a user to be able to click a submit button once.  `{once: true}` will trigger the handler once, then unbind itself, which is the same thing as calling the `elem.removeEventListener()` function. 
 
-### Day 26 - Stripe.com Follow Along Nav - February 27
+### Day 26 - Stripe.com Follow Along Nav - March 27
 Today was about mimicing the cool follow-along effect of the navigation that [stripe.com](https:stripe.com) has done on their website. The precursor to this lesson as Day 22 where we used the same `elem.getBoundingClientRect()`. Basically, we have a 'background' element which comprises the white background of the nav dropdown. When we hover over the top nav link, the dropdown will appear, but then we have to take the background element and make sure it has the same dimensions (top, left, height, width) as the dropdown. 
 
-### Day 27 - Drag and Scroll - February 28
+### Day 27 - Drag and Scroll - March 28
 Today was about dragging the mouse and having the page scroll the appropriate pixels left or right. In this lesson, we used `pageX` as well as `offsetLeft`.  In previous lessons, we've used `clientX\Y`. The difference is: 
 
 * `pageX\Y` are relative to the top left corner of the whole rendered page (including parts hidden by scrolling).
 * `clientX\Y` are relative to the top left corner of the visible part of the page, "seen" through the browser window. So basically the viewport.
 
 When we were making this, i was thinking that it seems unnecessary as you can scroll the mouse and get the same effect, but I can see how this would be the same code you might use for a drag and drop. 
+
+### Day 28 - Controlling Video Speed - March 29
+Once again, the important part of this lesson is really about understanding element dimensions and I"m not sure that I know which property to use when. 
+
+I did find a great [stackover article](https://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight/22675563) that explains the difference between clientHeight, offsetHeight, and scrollHeight. I think where I struggle with is when to take into acccount an offset or not. For instance, in this lesson we get the position of our mouse by using `event.pageY`, but then taking into account any offset by subtracting the `offsetTop`, `const y = e.pageY - this.offsetTop;`. Why do we need to do this? In our case, we can't assume that the slider div is always at the top of the page, as there might be a parent element there or padding. So if there is, that would push down our position, so we want to offset that push by subtracting the offsetTop.  This becomes more important when you understand that `event.pageY` is returning the Y position of the mouse _relative to the whole document_. 
