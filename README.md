@@ -153,3 +153,11 @@ When we were making this, i was thinking that it seems unnecessary as you can sc
 Once again, the important part of this lesson is really about understanding element dimensions and I"m not sure that I know which property to use when. 
 
 I did find a great [stackover article](https://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight/22675563) that explains the difference between clientHeight, offsetHeight, and scrollHeight. I think where I struggle with is when to take into acccount an offset or not. For instance, in this lesson we get the position of our mouse by using `event.pageY`, but then taking into account any offset by subtracting the `offsetTop`, `const y = e.pageY - this.offsetTop;`. Why do we need to do this? In our case, we can't assume that the slider div is always at the top of the page, as there might be a parent element there or padding. So if there is, that would push down our position, so we want to offset that push by subtracting the offsetTop.  This becomes more important when you understand that `event.pageY` is returning the Y position of the mouse _relative to the whole document_. 
+
+### Day 29 - Countdown Timer - March 31
+One of the coolest things I learned is that if you have a named form, you don't need to select it with `document.querySelector()`.  You can grab the form by calling `document.<form-name-attribute-value>`. You can then grab the input by chaining that on as long as the input has a name attribute. So in our lesson, we call the form input value with `document.customForm.minutes.value`, or form looking like this: 
+```
+    <form name="customForm" id="custom">
+        <input type="text" name="minutes" placeholder="Enter Minutes">
+    </form>
+```

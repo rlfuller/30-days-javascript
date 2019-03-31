@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Move to Click</title>
+  <style>
+    body{
+        background-color: #FFF;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        width: 550px;
+        height: 350px;
+        border: 15px solid #EDEDED;
+        overflow: hidden;
+        background-color: #F2F2F2;
+        cursor: pointer;
+    }
+
+    .circle {
+        width: 75px;
+        height: 75px;
+        background-color: rgb(255, 207, 0);
+        border-radius: 50%;
+        border: 15px solid rgb(255, 199, 0);
+        /* transform: translate3d(25px, 25px, 0); */
+        transition: transform .2s ease-in-out;
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle">
+
+        </div>
+
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+        const circle = document.querySelector(".circle");
+
+        function moveToClick(e){
+            let x = e.pageX - this.clientLeft - (circle.offsetWidth / 2);
+            let y = e.pageY - this.clientTop - (circle.offsetHeight / 2);
+
+            circle.style.transform = `translate3d(${x}px, ${y}px, 0`;
+
+        }
+        container.addEventListener("click", moveToClick);
+    </script>
+</body>
+</html>
