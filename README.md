@@ -162,3 +162,6 @@ One of the coolest things I learned is that if you have a named form, you don't 
     </form>
 ```
 I did try this by sticking a name attribute on a div but it seems to only work with forms. 
+
+### Day 30 - Whack A Mole - March 31
+What I"m most intrigued by is that Wes Bos pointed out a property on the event called `isTrusted`. And when you fake (or simulate) a click event, the property would be false. By checking that property for true, it's a way you can verify the client event. My question is how do you simulate a click in js? Someone on stackoverflow noted that to simulate a click, you would just call document.element.click(); So how does the computer/the Dom know that your simulated click is not a real click? I"m going to do some more research on this as I think it's an interesting question.  In other words ... this was lesson 30!
