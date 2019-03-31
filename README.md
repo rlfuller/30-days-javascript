@@ -161,3 +161,4 @@ One of the coolest things I learned is that if you have a named form, you don't 
         <input type="text" name="minutes" placeholder="Enter Minutes">
     </form>
 ```
+I did try this by sticking a name attribute on a div but it seems to only work with forms. 
